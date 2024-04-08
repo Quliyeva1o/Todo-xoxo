@@ -125,7 +125,6 @@ function editItem(event) {
     const listItem = event.target.closest('li');
     const productName = listItem.querySelector('span').textContent;
     const index = productsArray.findIndex(product => product.productName === productName);
-    itemCount.textContent = productsArray.length - countMarkedProducts();
 
 
     Swal.fire({
