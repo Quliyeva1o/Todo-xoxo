@@ -24,7 +24,7 @@ function main() {
         }
     });
 
-
+   
 }
 
 
@@ -37,7 +37,7 @@ function addProduct() {
         input.value = "";
         addToDOM(newProduct);
         itemCount.textContent = productsArray.length - countMarkedProducts();
-
+       
         displaySuccessMessage();
     }
 }
@@ -90,7 +90,7 @@ function markAsDone(event) {
     if (productIndex !== -1) {
         productsArray[productIndex].isMarked = true;
         itemCount.textContent = productsArray.length - countMarkedProducts();
-
+      
     }
 }
 
@@ -114,7 +114,7 @@ function deleteItem(event) {
                 listItem.remove();
                 productsArray.splice(index, 1);
                 itemCount.textContent = productsArray.length - countMarkedProducts();
-
+               
                 displayDeleteMessage();
             }
         });
@@ -125,7 +125,6 @@ function editItem(event) {
     const listItem = event.target.closest('li');
     const productName = listItem.querySelector('span').textContent;
     const index = productsArray.findIndex(product => product.productName === productName);
-
 
     Swal.fire({
         title: 'Edit to do',
@@ -139,8 +138,6 @@ function editItem(event) {
     }).then((result) => {
         if (result.isConfirmed) {
             if (result.value.trim() === '') {
-                itemCount.textContent = productsArray.length - countMarkedProducts();
-
                 Swal.fire({
                     title: `Input cannot be empty!`,
                     icon: 'warning'
@@ -161,7 +158,7 @@ function editItem(event) {
 
 
 function countMarkedProducts() {
-    productsArray = productsArray.filter(product => product.isMarked)
+    productsArray= productsArray.filter(product => product.isMarked)
     return productsArray.length;
 }
 
