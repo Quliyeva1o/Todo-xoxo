@@ -158,7 +158,8 @@ function editItem(event) {
 
 
 function countMarkedProducts() {
-    return productsArray.filter(product => product.isMarked).length;
+    productsArray= productsArray.filter(product => product.isMarked)
+    return productsArray.length;
 }
 
 function displayDeleteMessage() {
