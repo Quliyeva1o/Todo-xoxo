@@ -148,7 +148,6 @@ function editItem(event) {
                 });
             } else {
                 listItem.querySelector('span').textContent = result.value;
-                itemCount.textContent = productsArray.length - countMarkedProducts();
 
                 productsArray[index].productName = result.value;
 
